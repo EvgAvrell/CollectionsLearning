@@ -1,14 +1,11 @@
 package ru.synergy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 
         Cat[] cats = new Cat[4];
         cats[0] = new Cat("Томмас");
@@ -22,7 +19,7 @@ public class Main {
 
         //ArrayList
         ArrayList<Cat> catsList = new ArrayList<>();
-        for (Cat cat : cats){
+        for (Cat cat : cats) {
             catsList.add(cat);
         }
 
@@ -47,7 +44,7 @@ public class Main {
         //MethodList - LinkedList
         String str1 = new String("Hello World");
         String str2 = new String("My name Evgenu");
-        String str3 = new String("java start" );
+        String str3 = new String("java start");
 
         LinkedList<String> EvgenuBio = new LinkedList<>();
         EvgenuBio.add(str1);
@@ -78,6 +75,37 @@ public class Main {
         System.out.println(cars);
 
 
-    }
+        //ArrayList vs LinkedList
 
+        List<Integer> list = new LinkedList<>();
+
+        for (int i = 0; i < 5000000; i++) {
+            list.add(new Integer(i));
+        }
+        long start = System.currentTimeMillis();
+
+        for (int i = 0; i < 100; i++) ;
+        {
+            list.add(2000000, Integer.MAX_VALUE);
+        }
+
+        System.out.println("Время работы для LinkedList в (милесекундах)" + (System.currentTimeMillis() - start));
+
+
+        list = new ArrayList<>();
+
+        for (int i = 0; i < 5000000; i++) {
+            list.add(new Integer(i));
+        }
+        start = System.currentTimeMillis();
+
+        for (int i = 0; i < 100; i++) ;
+        {
+            list.add(2000000, Integer.MAX_VALUE);
+        }
+
+        System.out.println("Время работы для ArrayList в (милесекундах)" + (System.currentTimeMillis() - start));
+
+
+    }
 }
