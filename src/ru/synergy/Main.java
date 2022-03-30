@@ -60,6 +60,24 @@ public class Main {
         EvgenuBio.remove(1);
         System.out.println(EvgenuBio);
 
+        //LinkedList on practice
+        LinkedList<Car> cars = new LinkedList<>();
+        Car ferrari = new Car("Ferrari");
+        Car bugati = new Car("Veyron");
+        Car mercedes = new Car("Mercedes Benz");
+
+        cars.addAll(Arrays.asList(ferrari, bugati, mercedes));
+        System.out.println(cars);
+
+        cars.addFirst(new Car("Ford GT300"));
+        cars.addLast(new Car("Fiat"));
+
+        System.out.println(cars);
+
+        System.out.println(cars.pollFirst());
+        System.out.println(cars);
+
+
     }
 
 }
