@@ -3,6 +3,7 @@ package ru.synergy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedList;
 
 public class Main {
 
@@ -19,6 +20,7 @@ public class Main {
 
         System.out.println(Arrays.toString(cats));
 
+        //ArrayList
         ArrayList<Cat> catsList = new ArrayList<>();
         for (Cat cat : cats){
             catsList.add(cat);
@@ -41,6 +43,23 @@ public class Main {
         System.out.println(catsList.toString());
 
         System.out.println(catsList.size());
+
+        //MethodList - LinkedList
+        String str1 = new String("Hello World");
+        String str2 = new String("My name Evgenu");
+        String str3 = new String("java start" );
+
+        LinkedList<String> EvgenuBio = new LinkedList<>();
+        EvgenuBio.add(str1);
+        EvgenuBio.add(str2);
+        EvgenuBio.add(str3);
+
+
+        System.out.println(EvgenuBio);
+
+        EvgenuBio.remove(1);
+        System.out.println(EvgenuBio);
+
     }
 
 }
